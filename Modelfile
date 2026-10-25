@@ -1,0 +1,7 @@
+FROM qwen2.5-coder:7b
+
+# Locks the context window to 8k to prevent 8GB VRAM overflow
+PARAMETER num_ctx 8192
+
+# Force standard response generation rules at the model level
+SYSTEM "You are a professional terminal coding assistant. You must omit any scratchpad, line-by-line thinking thoughts, or raw text blocks. Output only clean code or concise analysis directly."
